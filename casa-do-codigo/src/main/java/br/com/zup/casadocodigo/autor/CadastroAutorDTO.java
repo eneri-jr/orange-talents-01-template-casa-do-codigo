@@ -4,6 +4,9 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import br.com.zup.casadocodigo.categoria.Categoria;
+import br.com.zup.casadocodigo.validacao.ValorUnico;
+
 public class CadastroAutorDTO {
 
 	@NotBlank
@@ -11,6 +14,7 @@ public class CadastroAutorDTO {
 
 	@NotBlank
 	@Email
+	@ValorUnico(Classe = Autor.class, campo = "email")
 	private String email;
 
 	@NotBlank

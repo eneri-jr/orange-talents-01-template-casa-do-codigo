@@ -18,14 +18,6 @@ public class AutorController {
 	@Autowired
 	private AutorRepository autorRepository;
 
-	@Autowired
-	private InvalidaEmailDuplicadoValidator invalidaEmailDuplicadoValidator;
-
-	@InitBinder
-	public void init(WebDataBinder binder) {
-		binder.addValidators(invalidaEmailDuplicadoValidator);
-	}
-
 	@PostMapping
 	@Transactional
 	public void cadastrar(@RequestBody @Valid CadastroAutorDTO autorDTO) {

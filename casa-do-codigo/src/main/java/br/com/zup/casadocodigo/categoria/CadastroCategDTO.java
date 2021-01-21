@@ -2,9 +2,12 @@ package br.com.zup.casadocodigo.categoria;
 
 import javax.validation.constraints.NotBlank;
 
+import br.com.zup.casadocodigo.validacao.ValorUnico;
+
 public class CadastroCategDTO {
 
 	@NotBlank
+	@ValorUnico(Classe = Categoria.class, campo = "nome")
 	private String nome;
 
 	public String getNome() {
