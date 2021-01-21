@@ -18,14 +18,6 @@ public class CategoriaController {
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 
-	@Autowired
-	private InvalidaNomeDuplicadoValidator invalidaNomeDuplicadoValidator;
-
-	@InitBinder
-	public void init(WebDataBinder binder) {
-		binder.addValidators(invalidaNomeDuplicadoValidator);
-	}
-
 	@PostMapping
 	@Transactional
 	public void cadastrar(@RequestBody @Valid CadastroCategDTO categoriaDTO) {
