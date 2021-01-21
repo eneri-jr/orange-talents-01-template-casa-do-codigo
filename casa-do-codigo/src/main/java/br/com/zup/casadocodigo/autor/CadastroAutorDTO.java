@@ -29,4 +29,16 @@ public class CadastroAutorDTO {
 		return new Autor(nome, email, descricao);
 	}
 
+	public String getNome() {
+		return nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
 }
