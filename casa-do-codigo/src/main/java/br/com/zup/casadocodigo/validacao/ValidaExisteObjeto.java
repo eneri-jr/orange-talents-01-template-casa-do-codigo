@@ -25,6 +25,9 @@ public class ValidaExisteObjeto implements ConstraintValidator<ExisteObjeto, Obj
 
 	@Override
 	public boolean isValid(Object value, ConstraintValidatorContext context) {
+		if(value == null) {
+			return true;
+		}
 		Query query = (Query) em
 				.createQuery("select 1 from " + klass.getName() + " where " + domainAttribute + "=:value");
 		query.setParameter("value", value);
