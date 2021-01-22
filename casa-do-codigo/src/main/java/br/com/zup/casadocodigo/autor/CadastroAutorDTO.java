@@ -4,7 +4,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import br.com.zup.casadocodigo.categoria.Categoria;
 import br.com.zup.casadocodigo.validacao.ValorUnico;
 
 public class CadastroAutorDTO {
