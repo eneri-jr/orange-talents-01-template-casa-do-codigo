@@ -14,7 +14,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 
 import br.com.zup.casadocodigo.autor.Autor;
 import br.com.zup.casadocodigo.categoria.Categoria;
@@ -77,6 +76,14 @@ public class Livro {
 		this.dataPublicacao = dataPublicacao;
 		this.categoria = categoria;
 		this.autor = autor;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getTitulo() {
+		return titulo;
 	}
 
 }
