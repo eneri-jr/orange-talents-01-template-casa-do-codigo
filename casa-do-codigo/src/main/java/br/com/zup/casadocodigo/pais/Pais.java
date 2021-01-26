@@ -1,5 +1,6 @@
 package br.com.zup.casadocodigo.pais;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +15,7 @@ public class Pais {
 	private Long id;
 
 	@NotBlank
+	@Column(unique = true)
 	private String nome;
 
 	public Pais() {
