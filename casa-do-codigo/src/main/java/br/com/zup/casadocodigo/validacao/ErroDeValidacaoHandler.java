@@ -3,6 +3,7 @@ package br.com.zup.casadocodigo.validacao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -34,6 +35,12 @@ public class ErroDeValidacaoHandler {
 		});
 
 		return dto;
+	}
+
+	@ResponseStatus(code = HttpStatus.INTERNAL_SERVER_ERROR)
+	@ExceptionHandler(ConstraintViolationException.class)
+	public String handle(ConstraintViolationException exception) {
+		return "Os dados informados no campo único ja existem no banco de dados";
 	}
 
 }

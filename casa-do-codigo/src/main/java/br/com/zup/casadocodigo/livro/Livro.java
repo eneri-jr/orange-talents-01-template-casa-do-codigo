@@ -2,6 +2,7 @@ package br.com.zup.casadocodigo.livro;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,6 +27,7 @@ public class Livro {
 	private Long id;
 
 	@NotBlank
+	@Column(unique = true)
 	private String titulo;
 
 	@NotBlank
@@ -44,6 +46,7 @@ public class Livro {
 	private Integer paginas;
 
 	@NotBlank
+	@Column(unique = true)
 	private String isbn;
 
 	@Future
